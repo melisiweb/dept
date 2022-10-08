@@ -37,5 +37,5 @@ export const useScrollDirection = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [direction]);
 
-  return direction;
+  return { direction };
 };

@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import { pxToRem } from "./utils";
 
 const HeadingBase = styled(Box)`
@@ -10,4 +9,9 @@ const HeadingBase = styled(Box)`
 export const Heading48 = styled(HeadingBase)`
   font-size: ${pxToRem(48)};
   line-height: ${pxToRem(48)};
+`;
+
+export const Heading34 = styled(HeadingBase)`
+  font-size: ${pxToRem(34)};
+  line-height: ${pxToRem(39)};
 `;

@@ -3,6 +3,7 @@ import { Black } from "../../colors";
 import { BASE_FONT_SIZE } from "../../utils";
 import LightFont from "assets/fonts/maison/light.woff2";
 import BookFont from "assets/fonts/maison/book.woff2";
+import { styled } from "@mui/material";
 
 export const GlobalStyles = css`
   * {
@@ -39,5 +40,13 @@ export const GlobalStyles = css`
     text-rendering: optimizeLegibility;
     font-family: MaisonNeueMG, Helvetica, Arial;
     -webkit-font-smoothing: antialiased;
+  }
+`;
+
+export const CSSVarProvider = styled("div")`
+  --header-height: 115px;
+
+  ${(props) => props.theme.breakpoints.down("md")} {
+    --header-height: 56px;
   }
 `;

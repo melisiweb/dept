@@ -1,7 +1,7 @@
 import React from "react";
 import { Global } from "@emotion/react";
 import { createTheme, ThemeProvider } from "@mui/material";
-import { GlobalStyles } from "./styles";
+import { CSSVarProvider, GlobalStyles } from "./styles";
 
 declare module "@mui/material/styles" {
   interface BreakpointOverrides {
@@ -30,7 +30,7 @@ const theme = createTheme({
 export const Theme: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      {children}
+      <CSSVarProvider>{children}</CSSVarProvider>
       <Global styles={GlobalStyles} />
     </ThemeProvider>
   );

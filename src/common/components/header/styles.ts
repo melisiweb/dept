@@ -3,15 +3,18 @@ import { Black, White } from "design-system/colors";
 import { ReactComponent as Logo } from "assets/images/logo.svg";
 
 export const Wrapper = styled("header")`
-  padding: 45px 0;
+  transition: all 0.2s linear;
+  z-index: 5;
   position: fixed;
   top: 0;
   width: 100%;
   background-color: ${Black};
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
 
   ${(props) => props.theme.breakpoints.down("md")} {
     background-color: ${White};
-    padding: 24px 0;
   }
 `;
 
