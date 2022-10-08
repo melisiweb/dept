@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import { Box } from "@mui/material";
 import { pxToRem } from "./utils";
 

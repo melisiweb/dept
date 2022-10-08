@@ -1,10 +1,12 @@
+import { Header } from "common/components/header";
 import { Heading48 } from "./design-system/typography";
 
 const App: React.FC = () => {
   return (
-    <div>
+    <>
+      <Header />
       <Heading48 component="h1">Dept</Heading48>
-    </div>
+    </>
   );
 };
 
