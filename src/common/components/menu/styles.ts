@@ -28,7 +28,7 @@ export const MenuButton = styled(UnstyledBtn)`
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: inherit;
+  color: ${(props) => props.color || "inherit"};
   text-decoration: none;
   font-size: ${pxToRem(18)};
 

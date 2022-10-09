@@ -173,4 +173,10 @@ export const pageContent = [
       },
     ],
   },
+  {
+    type: "clients",
+  },
+  {
+    type: "question-form",
+  },
 ];

@@ -7,14 +7,28 @@ export const Wrapper = styled("div")`
   padding: 92px 0;
   background-color: ${White};
   color: ${Black};
+
+  ${(props) => props.theme.breakpoints.down("md")} {
+    padding: 48px 0;
+  }
 `;
 
 export const Label = styled(Text16)`
   text-transform: uppercase;
 `.withComponent("label");
 
+export const Form = styled("form")`
+  ${(props) => props.theme.breakpoints.down("md")} {
+    margin-top: 38px;
+  }
+`;
+
 export const FormGroup = styled(Stack)`
   width: 295px;
+
+  ${(props) => props.theme.breakpoints.down("md")} {
+    width: 100%;
+  }
 `;
 
 export const Input = styled("input")`
@@ -30,7 +44,7 @@ export const Button = styled("button")`
   border-radius: 50px;
   border: 1px solid ${Black};
   cursor: pointer;
-  padding: 16px 64px;
+  padding: 14px 64px;
   margin: 0;
   font-size: ${pxToRem(18)};
   background-color: white;
@@ -39,6 +53,19 @@ export const Button = styled("button")`
 
   &:hover {
     background-color: ${LightGray};
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+
+  ${(props) => props.theme.breakpoints.down("md")} {
+    width: 100%;
   }
 `;
 

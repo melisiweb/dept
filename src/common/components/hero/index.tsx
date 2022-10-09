@@ -1,6 +1,6 @@
-import { Container } from "@mui/material";
 import { contentHeightState } from "common/atoms";
 import { useUI } from "common/hooks/use-ui";
+import { DeptContainer } from "design-system/layout";
 import { Heading34 } from "design-system/typography";
 import { HEADER_HEIGHT, HEADER_MOBILE_HEIGHT } from "design-system/utils";
 import { useRecoilValue } from "recoil";
@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
   return (
     <S.Wrapper style={{ backgroundImage: `url(${heroImage})`, height }}>
       <S.HeroContent>
-        <Container>
+        <DeptContainer>
           <S.TextContainer spacing="32px">
             <div>WORK</div>
             <Heading34 component="h1">
@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
               <strong>marketing</strong> to help brands stay ahead.
             </Heading34>
           </S.TextContainer>
-        </Container>
+        </DeptContainer>
       </S.HeroContent>
     </S.Wrapper>
   );

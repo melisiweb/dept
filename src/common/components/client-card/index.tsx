@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import { Heading48, StyledLink, Text16 } from "design-system/typography";
+import { Text16 } from "design-system/typography";
 import { ReactComponent as LinkIcon } from "assets/images/link-icon.svg";
 import { Stack } from "@mui/material";
 
@@ -12,17 +12,18 @@ interface Props {
 
 export const ClientCard: React.FC<Props> = (props) => {
   return (
-    <S.Wrapper style={{ backgroundImage: `url(${props.imagePath})` }}>
+    <S.Wrapper
+      to={`/project/${props.uuid}`}
+      style={{ backgroundImage: `url(${props.imagePath})` }}
+    >
       <S.TextContainer>
         <Stack spacing={4}>
           <Text16 component="h6">{props.companyName}</Text16>
-          <Heading48 component="h3">{props.title}</Heading48>
-          <StyledLink to={`/project/${props.uuid}`}>
-            <Stack direction="row" spacing={3}>
-              <LinkIcon />
-              <span>Read more</span>
-            </Stack>
-          </StyledLink>
+          <S.Title component="h3">{props.title}</S.Title>
+          <Stack direction="row" spacing={3}>
+            <LinkIcon />
+            <span>Read more</span>
+          </Stack>
         </Stack>
       </S.TextContainer>
     </S.Wrapper>

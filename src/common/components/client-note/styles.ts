@@ -6,6 +6,11 @@ export const Wrapper = styled("div")`
   height: 40vw;
   background-color: ${Black};
   padding: 0 32px;
+
+  ${(props) => props.theme.breakpoints.down("md")} {
+    height: auto;
+    padding: 24px;
+  }
 `;
 
 export const TextContainer = styled("div")`
@@ -19,7 +24,7 @@ export const Note = styled(Stack)`
   padding-top: 32px;
   border-top: 1px solid ${White};
 
-  &:first-child {
+  &:first-of-type {
     margin-top: 0;
     padding-top: 0;
     border-top: none;

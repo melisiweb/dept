@@ -1,5 +1,7 @@
 import { ClientNote } from "../client-note";
+import { Clients } from "../clients";
 import { Projects } from "../projects";
+import { QuestionForm } from "../question-form";
 import { Quote } from "../quote";
 
 interface Props {
@@ -16,6 +18,12 @@ const getTemplate = (item: any) => {
 
     case "quote":
       return <Quote text={item.text} author={item.author} />;
+
+    case "clients":
+      return <Clients />;
+
+    case "question-form":
+      return <QuestionForm />;
 
     default:
       return <>{item.type}</>;

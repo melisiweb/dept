@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 import { White } from "./colors";
 import { pxToRem } from "./utils";
 
-const HeadingBase = styled(Box)`
+export const HeadingBase = styled(Box)`
   margin: 0;
   font-weight: 400;
 `;
 
-const TextBase = styled(Box)`
+export const TextBase = styled(Box)`
   margin: 0;
   font-weight: 400;
 `;

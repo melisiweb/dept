@@ -1,5 +1,5 @@
-import { Container, Stack } from "@mui/material";
-import { ClientsGrid } from "design-system/layout";
+import { Stack } from "@mui/material";
+import { ClientsGrid, DeptContainer } from "design-system/layout";
 import { Heading34, Text18 } from "design-system/typography";
 import * as S from "./styles";
 import clientLogo1 from "assets/images/client-logos/client-logo1.png";
@@ -17,7 +17,7 @@ import clientLogo12 from "assets/images/client-logos/client-logo12.png";
 
 export const Clients: React.FC = () => {
   return (
-    <Container>
+    <DeptContainer>
       <Stack spacing={16} padding="92px 0">
         <Stack spacing={8}>
           <Heading34>Clients</Heading34>
@@ -66,6 +66,6 @@ export const Clients: React.FC = () => {
           />
         </ClientsGrid>
       </Stack>
-    </Container>
+    </DeptContainer>
   );
 };

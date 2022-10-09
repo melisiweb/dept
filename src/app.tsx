@@ -4,11 +4,9 @@ import { Hero } from "common/components/hero";
 import { Main } from "design-system/layout";
 import { useEffect } from "react";
 import { useSetRecoilState } from "recoil";
-import { Heading48 } from "./design-system/typography";
 import { Switcher } from "common/components/switcher";
 import { pageContent } from "common/endpoints";
-import { Clients } from "common/components/clients";
-import { QuestionForm } from "common/components/question-form";
+import { Footer } from "common/components/footer";
 
 const App: React.FC = () => {
   const setContentHeight = useSetRecoilState(contentHeightState);
@@ -30,13 +28,8 @@ const App: React.FC = () => {
       <Main>
         <Hero />
         <Switcher content={pageContent} />
-        <Clients />
-        <QuestionForm />
       </Main>
-      <Heading48 component="h1">Dept</Heading48>
-      <Heading48 component="h1">Dept</Heading48>
-      <Heading48 component="h1">Dept</Heading48>
-      <Heading48 component="h1">Dept</Heading48>
+      <Footer />
     </>
   );
 };

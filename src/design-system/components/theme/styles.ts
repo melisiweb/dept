@@ -35,6 +35,12 @@ export const GlobalStyles = css`
     font-weight: 700;
   }
 
+  ul,
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
   body {
     color: white;
     background-color: ${Black};

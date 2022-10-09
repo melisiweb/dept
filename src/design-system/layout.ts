@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { styled } from "@mui/material";
+import { Container, styled } from "@mui/material";
 
 export const FlexVCenter = css`
   display: flex;
@@ -30,6 +30,12 @@ export const ClientsGrid = styled("div")`
   row-gap: 80px;
 
   ${(props) => props.theme.breakpoints.down("md")} {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const DeptContainer = styled(Container)`
+  ${(props) => props.theme.breakpoints.down("md")} {
+    padding: 0 16px;
   }
 `;
