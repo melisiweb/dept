@@ -20,6 +20,8 @@ export const Wrapper = styled("header")`
 
 export const StyledLogo = styled(Logo)`
   min-width: 90px;
+  position: relative;
+  z-index: 100;
 
   ${(props) => props.theme.breakpoints.down("md")} {
     min-width: 52px;
