@@ -155,4 +155,22 @@ export const pageContent = [
     text: "“Dept helped us tell our story through a bold new identity and a robust online experience. To the tone of 60% growth in online bookings in just one month”",
     author: "MATTIJS TEN DRINK - CEO, TRANSAVIA",
   },
+  {
+    type: "projects",
+    layout: "grid",
+    projects: [
+      {
+        uuid: "1",
+        title: "A Summer island in the Netherlands",
+        companyName: "BOL.COM",
+        imagePath: client13,
+      },
+      {
+        uuid: "2",
+        title: "Not some average banking website",
+        companyName: "KEMPEN",
+        imagePath: client4,
+      },
+    ],
+  },
 ];

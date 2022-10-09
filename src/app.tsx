@@ -7,6 +7,8 @@ import { useSetRecoilState } from "recoil";
 import { Heading48 } from "./design-system/typography";
 import { Switcher } from "common/components/switcher";
 import { pageContent } from "common/endpoints";
+import { Clients } from "common/components/clients";
+import { QuestionForm } from "common/components/question-form";
 
 const App: React.FC = () => {
   const setContentHeight = useSetRecoilState(contentHeightState);
@@ -28,6 +30,8 @@ const App: React.FC = () => {
       <Main>
         <Hero />
         <Switcher content={pageContent} />
+        <Clients />
+        <QuestionForm />
       </Main>
       <Heading48 component="h1">Dept</Heading48>
       <Heading48 component="h1">Dept</Heading48>

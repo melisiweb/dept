@@ -23,3 +23,13 @@ export const ContentGrid = styled("div")`
     grid-template-columns: 1fr;
   }
 `;
+
+export const ClientsGrid = styled("div")`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 80px;
+
+  ${(props) => props.theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr;
+  }
+`;
