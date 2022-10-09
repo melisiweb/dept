@@ -14,3 +14,12 @@ export const FlexHCenter = css`
 export const Main = styled("main")`
   margin-top: var(--header-height);
 `;
+
+export const ContentGrid = styled("div")`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  ${(props) => props.theme.breakpoints.down("md")} {
+    grid-template-columns: 1fr;
+  }
+`;

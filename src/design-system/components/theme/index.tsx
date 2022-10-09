@@ -15,6 +15,7 @@ declare module "@mui/material/styles" {
 }
 
 const theme = createTheme({
+  spacing: 4,
   breakpoints: {
     values: {
       xs: 0,

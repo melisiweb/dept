@@ -5,6 +5,8 @@ import { Main } from "design-system/layout";
 import { useEffect } from "react";
 import { useSetRecoilState } from "recoil";
 import { Heading48 } from "./design-system/typography";
+import { Switcher } from "common/components/switcher";
+import { pageContent } from "common/endpoints";
 
 const App: React.FC = () => {
   const setContentHeight = useSetRecoilState(contentHeightState);
@@ -25,6 +27,7 @@ const App: React.FC = () => {
       <Header />
       <Main>
         <Hero />
+        <Switcher content={pageContent} />
       </Main>
       <Heading48 component="h1">Dept</Heading48>
       <Heading48 component="h1">Dept</Heading48>

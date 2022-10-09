@@ -1,6 +1,10 @@
 import { css } from "@emotion/react";
 import { Black } from "../../colors";
-import { BASE_FONT_SIZE } from "../../utils";
+import {
+  BASE_FONT_SIZE,
+  HEADER_HEIGHT,
+  HEADER_MOBILE_HEIGHT,
+} from "../../utils";
 import LightFont from "assets/fonts/maison/light.woff2";
 import BookFont from "assets/fonts/maison/book.woff2";
 import { styled } from "@mui/material";
@@ -44,9 +48,9 @@ export const GlobalStyles = css`
 `;
 
 export const CSSVarProvider = styled("div")`
-  --header-height: 115px;
+  --header-height: ${HEADER_HEIGHT}px;
 
   ${(props) => props.theme.breakpoints.down("md")} {
-    --header-height: 56px;
+    --header-height: ${HEADER_MOBILE_HEIGHT}px;
   }
 `;
