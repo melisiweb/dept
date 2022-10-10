@@ -16,7 +16,7 @@ export const ClientCard: React.FC<Props> = (props) => {
       to={`/project/${props.uuid}`}
       style={{ backgroundImage: `url(${props.imagePath})` }}
     >
-      <S.TextContainer>
+      <S.TextContainer className="text-container">
         <Stack spacing={4}>
           <Text16 component="h6">{props.companyName}</Text16>
           <S.Title component="h3">{props.title}</S.Title>
@@ -26,6 +26,7 @@ export const ClientCard: React.FC<Props> = (props) => {
           </Stack>
         </Stack>
       </S.TextContainer>
+      <S.TextReadibility />
     </S.Wrapper>
   );
 };

@@ -1,5 +1,5 @@
 import { Stack, styled } from "@mui/material";
-import { Black } from "design-system/colors";
+import { Black, White } from "design-system/colors";
 import { pxToRem } from "design-system/utils";
 import { NavLink } from "react-router-dom";
 
@@ -30,9 +30,26 @@ export const StyledLink = styled(NavLink)`
   color: ${(props) => props.color || "inherit"};
   text-decoration: none;
   font-size: ${pxToRem(18)};
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: ${White};
+    transition: all 0.1s linear;
+    opacity: 0;
+    transform: translate3d(0, 5px, 0);
+  }
 
   &.active {
-    text-decoration: underline;
+    &:after {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
   }
 `;
 

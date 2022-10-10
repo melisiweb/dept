@@ -1,9 +1,16 @@
-import { Stack, styled } from "@mui/material";
+import { styled } from "@mui/material";
 import { Black, White } from "design-system/colors";
 import { pxToRem } from "design-system/utils";
+import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
 const drawerPadding = 156;
+
+export const Wrapper = styled(motion.div)`
+  position: absolute;
+  overflow: hidden;
+`;
+
 export const MenuDrawer = styled("div")`
   background-color: ${Black};
   overflow: auto;
@@ -54,8 +61,8 @@ export const MenuDrawerHeader = styled("div")`
   justify-content: space-between;
 `;
 
-export const MenuDrawerItem = styled(Stack)`
-  ${(props) => ({ ...props.sx })}
+export const MenuDrawerItem = styled(motion.li)`
+  display: flex;
   flex-direction: row;
   justify-content: flex-end;
   border-top: 1px solid ${White};
@@ -64,4 +71,4 @@ export const MenuDrawerItem = styled(Stack)`
   &:first-of-type {
     border-top: 0;
   }
-` as typeof Stack;
+`;

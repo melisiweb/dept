@@ -56,6 +56,11 @@ const CONTACT = {
   label: "Contact",
 };
 
+const ABOUT = {
+  path: "/about",
+  label: "About",
+};
+
 export const mainMenuShort: MenuItem[] = [
   WORK,
   CULTURE,
@@ -74,5 +79,14 @@ export const mainMenuLong: MenuItem[] = [
   STORIES,
   CAREERS,
   EVENTS,
+  CONTACT,
+];
+
+export const footerMenu: MenuItem[] = [
+  WORK,
+  SERVICES,
+  STORIES,
+  ABOUT,
+  CAREERS,
   CONTACT,
 ];

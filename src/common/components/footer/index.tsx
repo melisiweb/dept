@@ -6,6 +6,7 @@ import { ReactComponent as InstagramIcon } from "assets/images/social/instagram.
 import { ReactComponent as TwitterIcon } from "assets/images/social/twitter.svg";
 import { ReactComponent as FacebookIcon } from "assets/images/social/facebook.svg";
 import * as S from "./styles";
+import { footerMenu } from "routes";
 
 export const Footer: React.FC = () => {
   return (
@@ -23,26 +24,13 @@ export const Footer: React.FC = () => {
               direction={{ xs: "column", md: "row" }}
               spacing={{ xs: 10, md: 5 }}
             >
-              <MenuListItem component="li">
-                <StyledLink end to="/">
-                  Work
-                </StyledLink>
-              </MenuListItem>
-              <MenuListItem component="li">
-                <StyledLink to="/services">Services</StyledLink>
-              </MenuListItem>
-              <MenuListItem component="li">
-                <StyledLink to="/stories">Stories</StyledLink>
-              </MenuListItem>
-              <MenuListItem component="li">
-                <StyledLink to="/about">About</StyledLink>
-              </MenuListItem>
-              <MenuListItem component="li">
-                <StyledLink to="/careers">Careers</StyledLink>
-              </MenuListItem>
-              <MenuListItem component="li">
-                <StyledLink to="/contact">Contact</StyledLink>
-              </MenuListItem>
+              {footerMenu.map((menuItem) => (
+                <MenuListItem component="li" key={menuItem.path}>
+                  <StyledLink end={menuItem.end} to={menuItem.path}>
+                    {menuItem.label}
+                  </StyledLink>
+                </MenuListItem>
+              ))}
             </Stack>
             <Stack
               alignItems="center"

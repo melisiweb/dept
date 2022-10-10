@@ -39,6 +39,7 @@ export const GlobalStyles = css`
   li {
     padding: 0;
     margin: 0;
+    list-style: none;
   }
 
   body {
