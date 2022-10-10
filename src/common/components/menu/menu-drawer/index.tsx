@@ -13,37 +13,37 @@ import { useSetRecoilState } from "recoil";
 const boxVariant = {
   visible: {
     opacity: 1,
-    y: 0,
     width: "100%",
-    height: "100%",
+    y: 0,
     borderRadius: 0,
-    transition: {
-      type: "spring",
-      duration: 0.5,
-    },
   },
   hidden: {
     opacity: 0,
-    y: 100,
-    right: 0,
-    top: 0,
-    width: 0,
+    y: -400,
     borderRadius: "50%",
-  },
-};
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
   },
 };
 
 const item = {
   hidden: { opacity: 0, x: -100 },
-  show: { opacity: 1, x: 0 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transation: {
+      duration: 0.5,
+    },
+  },
 };
 
+const container = {
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+  hide: { opacity: 0 },
+};
 export const MenuDrawer: React.FC = () => {
   const setShowDrawer = useSetRecoilState(menuDrawerState);
   const location = useLocation();
@@ -60,12 +60,12 @@ export const MenuDrawer: React.FC = () => {
                 <CloseIcon />
               </IconButton>
             </S.MenuDrawerHeader>
-            <motion.ul variants={container} initial="hidden" animate="show">
+            <motion.ul variants={container} initial="hide" animate="show">
               {mainMenuLong.map((menuItem, index) => (
                 <S.MenuDrawerItem
                   key={menuItem.path}
                   variants={item}
-                  transition={{ delay: index / 10 }}
+                  transition={{ delay: index * 0.1 }}
                   initial="hidden"
                   animate="show"
                 >

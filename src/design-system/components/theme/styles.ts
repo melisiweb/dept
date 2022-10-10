@@ -51,6 +51,7 @@ export const GlobalStyles = css`
     text-rendering: optimizeLegibility;
     font-family: MaisonNeueMG, Helvetica, Arial;
     -webkit-font-smoothing: antialiased;
+    transform: transale3d(0, 0, 0);
   }
 `;
 

@@ -39,6 +39,7 @@ export const MenuDrawerLink = styled(NavLink)`
   line-height: ${pxToRem(60)};
   width: 100%;
   text-align: right;
+  will-change: transform;
 
   &:first-of-type {
     margin-top: 0;
@@ -67,6 +68,7 @@ export const MenuDrawerItem = styled(motion.li)`
   justify-content: flex-end;
   border-top: 1px solid ${White};
   padding-top: 8px;
+  will-change: transform;
 
   &:first-of-type {
     border-top: 0;
