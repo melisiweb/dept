@@ -13,23 +13,19 @@ export interface Project {
   companyName: string;
   imagePath?: string;
   notes?: Note[];
+  categories: string[];
 }
 
 interface Props {
-  items: {
-    uuid: string;
-    title: string;
-    companyName: string;
-    imagePath?: string;
-  }[];
+  items: Project[];
 }
 
 export const Projects: React.FC<Props> = ({ items }) => {
   return (
     <ContentGrid>
-      {items.map((item) => (
-        <ClientCard key={item.uuid} {...item} />
-      ))}
+      {items.map((item) => {
+        return <ClientCard key={item.uuid} {...item} />;
+      })}
     </ContentGrid>
   );
 };

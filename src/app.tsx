@@ -7,6 +7,7 @@ import { useSetRecoilState } from "recoil";
 import { Switcher } from "common/components/switcher";
 import { pageContent } from "common/endpoints";
 import { Footer } from "common/components/footer";
+import { ProjectsFilters } from "common/components/projects-filter";
 
 const App: React.FC = () => {
   const setContentHeight = useSetRecoilState(contentHeightState);
@@ -27,6 +28,7 @@ const App: React.FC = () => {
       <Header />
       <Main>
         <Hero />
+        <ProjectsFilters />
         <Switcher content={pageContent} />
       </Main>
       <Footer />

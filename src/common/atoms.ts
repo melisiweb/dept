@@ -9,3 +9,8 @@ export const menuDrawerState = atom({
   key: "menuDrawerState",
   default: false,
 });
+
+export const projectsFilterState = atom({
+  key: "projectsFilterState",
+  default: "all",
+});
