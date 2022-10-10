@@ -2,6 +2,7 @@ import React from "react";
 import { Global } from "@emotion/react";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { CSSVarProvider, GlobalStyles } from "./styles";
+import { White } from "design-system/colors";
 
 declare module "@mui/material/styles" {
   interface BreakpointOverrides {
@@ -16,6 +17,11 @@ declare module "@mui/material/styles" {
 
 const theme = createTheme({
   spacing: 4,
+  palette: {
+    secondary: {
+      main: White,
+    },
+  },
   breakpoints: {
     values: {
       xs: 0,

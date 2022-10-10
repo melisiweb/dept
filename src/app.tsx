@@ -47,7 +47,7 @@ const App: React.FC = () => {
         <ProjectsFilters />
         {isLoading ? (
           <Stack justifyContent="center" alignItems="center" minHeight={200}>
-            <CircularProgress />
+            <CircularProgress color="secondary" />
           </Stack>
         ) : (
           <Switcher content={content} />
