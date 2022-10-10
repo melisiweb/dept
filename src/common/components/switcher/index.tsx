@@ -3,6 +3,7 @@ import { Clients } from "../clients";
 import { Projects } from "../projects";
 import { QuestionForm } from "../question-form";
 import { Quote } from "../quote";
+import { SlidingSection } from "../sliding-section";
 
 interface Props {
   content: any[];
@@ -34,7 +35,11 @@ export const Switcher: React.FC<Props> = ({ content }) => {
   return (
     <>
       {content.map((item, index) => {
-        return <div key={`template-${index}`}>{getTemplate(item)}</div>;
+        return (
+          <SlidingSection key={`template-${index}`}>
+            {getTemplate(item)}
+          </SlidingSection>
+        );
       })}
     </>
   );
