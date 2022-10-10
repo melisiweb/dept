@@ -6,11 +6,16 @@ import { useRecoilState } from "recoil";
 import { menuDrawerState } from "common/atoms";
 import { MenuDrawer } from "./menu-drawer";
 import { mainMenuShort } from "routes";
+import { useEffect } from "react";
 
 export const Menu: React.FC = () => {
   const { mdDown } = useUI();
   const [showDrawer, setShowDrawer] = useRecoilState(menuDrawerState);
   const onMenuClick = () => setShowDrawer(!showDrawer);
+
+  useEffect(() => {
+    document.body.style.overflow = showDrawer ? "hidden" : "visible";
+  }, [showDrawer]);
 
   return (
     <>
@@ -51,7 +56,9 @@ export const Menu: React.FC = () => {
         aria-labelledby="Main menu modal"
         container={document.querySelector("main")}
       >
-        <MenuDrawer />
+        <div>
+          <MenuDrawer />
+        </div>
       </Modal>
     </>
   );

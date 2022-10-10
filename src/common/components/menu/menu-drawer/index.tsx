@@ -47,36 +47,43 @@ const item = {
 export const MenuDrawer: React.FC = () => {
   const setShowDrawer = useSetRecoilState(menuDrawerState);
   const location = useLocation();
+  const handleClose = () => setShowDrawer(false);
 
   return (
-    <S.Wrapper variants={boxVariant} animate="visible" initial="hidden">
-      <S.MenuDrawer>
-        <DeptContainer>
-          <S.MenuDrawerHeader>
-            <Logo />
-            <IconButton onClick={() => setShowDrawer(false)}>
-              <CloseIcon />
-            </IconButton>
-          </S.MenuDrawerHeader>
-          <motion.ul variants={container} initial="hidden" animate="show">
-            {mainMenuLong.map((menuItem, index) => (
-              <S.MenuDrawerItem
-                key={menuItem.path}
-                variants={item}
-                transition={{ delay: index / 10 }}
-                initial="hidden"
-                animate="show"
-              >
-                <S.MenuDrawerLink end={menuItem.end} to={menuItem.path}>
-                  {location.pathname === menuItem.path && <ArrowIcon />}{" "}
-                  {menuItem.label}
-                </S.MenuDrawerLink>
-              </S.MenuDrawerItem>
-            ))}
-          </motion.ul>
-        </DeptContainer>
-        <S.MenuDrawerGradient />
-      </S.MenuDrawer>
-    </S.Wrapper>
+    <>
+      <S.Wrapper variants={boxVariant} animate="visible" initial="hidden">
+        <S.MenuDrawer>
+          <DeptContainer>
+            <S.MenuDrawerHeader>
+              <Logo />
+              <IconButton onClick={handleClose}>
+                <CloseIcon />
+              </IconButton>
+            </S.MenuDrawerHeader>
+            <motion.ul variants={container} initial="hidden" animate="show">
+              {mainMenuLong.map((menuItem, index) => (
+                <S.MenuDrawerItem
+                  key={menuItem.path}
+                  variants={item}
+                  transition={{ delay: index / 10 }}
+                  initial="hidden"
+                  animate="show"
+                >
+                  <S.MenuDrawerLink
+                    end={menuItem.end}
+                    to={menuItem.path}
+                    onClick={handleClose}
+                  >
+                    {location.pathname === menuItem.path && <ArrowIcon />}{" "}
+                    {menuItem.label}
+                  </S.MenuDrawerLink>
+                </S.MenuDrawerItem>
+              ))}
+            </motion.ul>
+          </DeptContainer>
+          <S.MenuDrawerGradient />
+        </S.MenuDrawer>
+      </S.Wrapper>
+    </>
   );
 };
