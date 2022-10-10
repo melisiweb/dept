@@ -194,3 +194,10 @@ export const pageContent = [
     type: "question-form",
   },
 ];
+
+export const fakeGetPageData = () =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(pageContent);
+    }, 2000);
+  });

@@ -8,7 +8,7 @@ import { Quote } from "../quote";
 import { SlidingSection } from "../sliding-section";
 
 interface Props {
-  content: any[];
+  content: any[] | null;
 }
 
 const getTemplate = (item: any, filter: string) => {
@@ -43,7 +43,7 @@ export const Switcher: React.FC<Props> = ({ content }) => {
   const filter = useRecoilValue(projectsFilterState);
   return (
     <>
-      {content.map((item, index) => {
+      {content?.map((item, index) => {
         return (
           <SlidingSection key={`template-${index}`}>
             {getTemplate(item, filter)}

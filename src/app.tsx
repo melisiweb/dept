@@ -2,15 +2,18 @@ import { contentHeightState } from "common/atoms";
 import { Header } from "common/components/header";
 import { Hero } from "common/components/hero";
 import { Main } from "design-system/layout";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { Switcher } from "common/components/switcher";
-import { pageContent } from "common/endpoints";
+import { fakeGetPageData } from "common/endpoints";
 import { Footer } from "common/components/footer";
 import { ProjectsFilters } from "common/components/projects-filter";
+import { CircularProgress, Stack } from "@mui/material";
 
 const App: React.FC = () => {
   const setContentHeight = useSetRecoilState(contentHeightState);
+  const [isLoading, setLoading] = useState(false);
+  const [content, setContent] = useState<any>(null);
 
   useEffect(() => {
     let timeout = 0;
@@ -23,13 +26,32 @@ const App: React.FC = () => {
     });
   }, [setContentHeight]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        setLoading(true);
+        const pageContent = await fakeGetPageData();
+
+        setContent(pageContent);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
   return (
     <>
       <Header />
       <Main>
         <Hero />
         <ProjectsFilters />
-        <Switcher content={pageContent} />
+        {isLoading ? (
+          <Stack justifyContent="center" alignItems="center" minHeight={200}>
+            <CircularProgress />
+          </Stack>
+        ) : (
+          <Switcher content={content} />
+        )}
       </Main>
       <Footer />
     </>
