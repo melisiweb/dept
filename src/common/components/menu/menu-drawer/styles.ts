@@ -9,6 +9,8 @@ const drawerPadding = 156;
 export const Wrapper = styled(motion.div)`
   position: absolute;
   overflow: hidden;
+  height: 100vh;
+  will-change: contents;
 `;
 
 export const MenuDrawer = styled("div")`
